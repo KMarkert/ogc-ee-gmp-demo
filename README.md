@@ -10,9 +10,10 @@ This repo demostrates the code and Cloud setup for sharing results for an Earth 
 To get started, you will need:
 
 1. `gcloud` installed ([installation instructions](https://cloud.google.com/sdk/docs/install))
-2. A Google Cloud project (get one [here](https://console.cloud.google.com/projectcreate))
-3. A Cloud storage bucket (create one [here](https://console.cloud.google.com/storage/create-bucket))
-4. Earth Engine registered and enabled for your project (register your project with EE [here](https://code.earthengine.google.com/register))
+2. A Google Cloud project ([get one here](https://console.cloud.google.com/projectcreate))
+3. A Cloud storage bucket ([create one here](https://console.cloud.google.com/storage/create-bucket))
+4. Earth Engine registered and enabled for your project ([register your project with EE here](https://code.earthengine.google.com/register))
+5. A Google Maps Platform API key ([get a GMP API key here](https://console.cloud.google.com/google/maps-apis/credentials))
 
 The architecture of the setup is shown in the following figure:
 
@@ -43,6 +44,15 @@ gcloud run deploy $APPNAME --image gcr.io/$PROJECT/$APPNAME --platform managed -
 After the deploy command, you should see a service in the [Cloud Run page](https://console.cloud.google.com/run) with a healthy ✅ status.
 
 ### Build and store frontend on Cloud Storage
+
+The frontend consists of a vanilla application for getting the tiles from the Cloud Run instances and displaying on Google Maps in a web browser.
+
+Before deploying, you will need to update some of the parameters in code for your setup:
+
+1. Update the `config.json` file to include the URL endpoint from Cloud Run that is taking the requests (if you are using the same code as this example, it should include `/get-map`). 
+2. Update the `index.html` at line 64 to include your Google Maps Platform API key.
+
+After adding in your information, run the following commands to build and push your single page application to Cloud Storage:
 
 ```
 cd ../frontend
