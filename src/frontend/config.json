@@ -1,0 +1,3 @@
+{
+    "data_endpoint": "<cloudrun-map-endpoint>?x={x}&y={y}&z={z}"
+}
