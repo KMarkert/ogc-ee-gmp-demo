@@ -3,7 +3,7 @@ Repo for a demo at the 2023 OGC Members Meeting highlighting Earth Engine and Go
 
 This repo demostrates the code and Cloud setup for sharing results for an Earth Engine process/analysis on a simple webpage that is hosted on Cloud Storage. This example creates a flood map (cyan color) from the recent March 2023 flooding in California using Earth Engine and displayes in Google Maps.
 
-<img src="images/ee_maps_demo_viz.png"  width="40%">
+<img src="images/ee_maps_demo_viz.png"  width="70%">
 
 ## Setup
 
@@ -16,7 +16,7 @@ To get started, you will need:
 
 The architecture of the setup is shown in the following figure:
 
-<img src="images/ee_app_architecture.png"  width="40%">
+<img src="images/ee_app_architecture.png"  width="60%">
 
 A few commands will be run to deploy the application and to customize for your project, you can set the following environmental variables:
 
